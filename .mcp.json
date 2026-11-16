@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+        "mdster": {
+            "type": "http",
+            "url": "https://mdster.com/mcp"
+        }
+    }
+}

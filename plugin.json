@@ -1,7 +1,7 @@
 {
     "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
     "name": "mdster",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Practise MDster medical exam questions (MCQ, SAQ and SOE cases) with marking, explanations and progress from your MDster account.",
     "author": {
         "name": "Anesthesia Zone, LLC",
@@ -100,7 +100,7 @@
                 }
             },
             "publication": {
-                "release_notes": "1.1.0: First directory release. Practise MDster MCQ, SAQ and SOE questions from your MDster exams with marking, explanations and results, plus each speciality's questions of the day. Every tool states its read-only, destructive and open-world behaviour, and the plugin includes skills that lay out questions, feedback and results as clear cards."
+                "release_notes": "1.1.1: The Claude plugin now includes its MCP server connection (.mcp.json), which was missing from 1.1.0. Earlier in 1.1.0: first directory release. Practise MDster MCQ, SAQ and SOE questions from your MDster exams with marking, explanations and results, plus each speciality's questions of the day. Every tool states its read-only, destructive and open-world behaviour, and the plugin includes skills that lay out questions, feedback and results as clear cards."
             }
         }
     }

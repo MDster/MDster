@@ -3,7 +3,7 @@
     "name": "com.mdster/mdster",
     "title": "MDster",
     "description": "Practise medical exam questions (MCQ, SAQ, SOE) with marking and explanations from MDster.",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "websiteUrl": "https://mdster.com/ai-assistants",
     "repository": {
         "url": "https://github.com/MDster/MDster",
