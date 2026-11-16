@@ -1,0 +1,12 @@
+{
+    "name": "mdster",
+    "description": "The MDster plugin for practising medical exam questions with Claude.",
+    "owner": { "name": "Anesthesia Zone, LLC d/b/a MDster", "email": "support@mdster.com" },
+    "plugins": [
+        {
+            "name": "mdster",
+            "source": "./",
+            "description": "Practise MDster medical exam questions (MCQ, SAQ and SOE cases) with Claude, with marking, explanations and progress from your MDster account."
+        }
+    ]
+}

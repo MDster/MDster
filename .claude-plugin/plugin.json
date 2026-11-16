@@ -1,0 +1,27 @@
+{
+    "name": "mdster",
+    "version": "1.1.0",
+    "description": "Practise MDster medical exam questions (MCQ, SAQ and SOE cases) with Claude, with marking, explanations and progress from your MDster account.",
+    "author": {
+        "name": "MDster",
+        "url": "https://mdster.com"
+    },
+    "homepage": "https://mdster.com/ai-assistants",
+    "documentationUrl": "https://mdster.com/ai-assistants",
+    "supportUrl": "https://mdster.com/contact",
+    "termsOfServiceUrl": "https://mdster.com/terms",
+    "privacyPolicyUrl": "https://mdster.com/privacy",
+    "icon": "./.claude-plugin/icon.png",
+    "license": "MIT",
+    "repository": "https://github.com/MDster/MDster",
+    "keywords": [
+        "medical-education",
+        "exam-preparation",
+        "mcq",
+        "saq",
+        "soe",
+        "viva",
+        "medicine",
+        "study"
+    ]
+}

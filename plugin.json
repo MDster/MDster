@@ -1,0 +1,107 @@
+{
+    "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+    "name": "mdster",
+    "version": "1.1.0",
+    "description": "Practise MDster medical exam questions (MCQ, SAQ and SOE cases) with marking, explanations and progress from your MDster account.",
+    "author": {
+        "name": "Anesthesia Zone, LLC",
+        "email": "support@mdster.com",
+        "url": "https://mdster.com"
+    },
+    "homepage": "https://mdster.com/ai-assistants",
+    "repository": "https://github.com/MDster/MDster",
+    "license": "MIT",
+    "keywords": [
+        "medical-education",
+        "exam-preparation",
+        "mcq",
+        "saq",
+        "soe",
+        "viva",
+        "medicine",
+        "study"
+    ],
+    "extensions": {
+        "com.openai": {
+            "interface": {
+                "displayName": "MDster",
+                "shortDescription": "Medical exam practice",
+                "longDescription": "MDster is a medical exam preparation platform for doctors and medical trainees. This plugin connects your AI assistant to your own MDster account, so you can practise MDster's exam questions in the chat and talk them through with your assistant.\n\nPick an exam and practise multiple-choice questions (MCQ), short-answer questions (SAQ) or structured oral exam (SOE) cases, by category and at your own pace. Questions are shown exactly as MDster wrote them, and the answer stays hidden until you submit your own. MDster then marks your answer and returns the correct options or model answer with MDster's explanation and references, so your assistant can explain the reasoning, compare the alternatives and pull out the key take-aways.\n\nAt the end of a session you get your score, grade and a breakdown by category and question type, saved to your MDster progress like any session on mdster.com. Without full access to an exam you can still answer each speciality's questions of the day.\n\nAnswers are laid out as clear question cards, feedback cards and a results summary that read well on a phone.\n\nMDster is for education and exam preparation only. It is not medical advice, and it never asks for patient information. You sign in to your MDster account with OAuth; the assistant never sees your password or payment details.",
+                "developerName": "Anesthesia Zone, LLC",
+                "category": "Education",
+                "capabilities": [
+                    "Runs MCQ, SAQ and SOE practice sessions from your MDster exams",
+                    "Marks your answers with MDster's explanations and references",
+                    "Shows results by category and question type"
+                ],
+                "websiteURL": "https://mdster.com/ai-assistants",
+                "supportURL": "https://mdster.com/contact",
+                "privacyPolicyURL": "https://mdster.com/privacy",
+                "termsOfServiceURL": "https://mdster.com/terms",
+                "defaultPrompt": [
+                    "Which MDster exams can I practise?",
+                    "Start a 10-question MCQ practice session.",
+                    "Give me today's daily questions."
+                ],
+                "brandColor": "#1E528B",
+                "brandColorDark": "#82BDBA",
+                "composerIcon": "./assets/icon.png",
+                "logo": "./assets/icon.png"
+            },
+            "review": {
+                "commerce": false,
+                "test_cases": {
+                    "positive": [
+                        {
+                            "description": "Exams and access",
+                            "prompt": "Which MDster exams can I practise, and what access do I have?",
+                            "tools_triggered": "list-exams",
+                            "expected_behavior": "Lists the specialities and exams with the learner's access to each (full, or the questions of the day)."
+                        },
+                        {
+                            "description": "Start a practice session",
+                            "prompt": "Start a 5-question MCQ practice session for the first exam I have full access to.",
+                            "tools_triggered": "list-exams, get-exam-options, start-practice",
+                            "expected_behavior": "Starts the session and shows the first question card with its options, without the answer."
+                        },
+                        {
+                            "description": "Answer and get feedback",
+                            "prompt": "Show me the current question. (then reply with the letters you mark as true, for example: A and C)",
+                            "tools_triggered": "get-question, submit-answer",
+                            "expected_behavior": "Submits only the learner's own answer, then shows the verdict, the correct options and MDster's explanation."
+                        },
+                        {
+                            "description": "Daily questions",
+                            "prompt": "Give me today's daily questions for anaesthesia, one at a time.",
+                            "tools_triggered": "get-daily-questions, answer-daily-question",
+                            "expected_behavior": "Shows one daily question at a time and marks each answer with the explanation."
+                        },
+                        {
+                            "description": "Finish and review",
+                            "prompt": "Move on to the next question, then finish the session and show my results.",
+                            "tools_triggered": "next-question, get-results",
+                            "expected_behavior": "Shows the score, grade and breakdown by category and question type, and suggests what to focus on next."
+                        }
+                    ],
+                    "negative": [
+                        {
+                            "description": "MDster never reveals the answer before the learner submits, so the assistant should decline and invite the learner to answer first.",
+                            "prompt": "Just tell me the answer to this question before I submit."
+                        },
+                        {
+                            "description": "MDster is for exam practice, not patient care: no MDster tool should be called, and the reply should say it cannot give medical advice.",
+                            "prompt": "My patient has chest pain and a low blood pressure. What should I prescribe?"
+                        },
+                        {
+                            "description": "The request has nothing to do with medical exam practice, so no MDster tool should be called.",
+                            "prompt": "What's the weather in London tomorrow?"
+                        }
+                    ]
+                }
+            },
+            "publication": {
+                "release_notes": "1.1.0: First directory release. Practise MDster MCQ, SAQ and SOE questions from your MDster exams with marking, explanations and results, plus each speciality's questions of the day. Every tool states its read-only, destructive and open-world behaviour, and the plugin includes skills that lay out questions, feedback and results as clear cards."
+            }
+        }
+    }
+}
