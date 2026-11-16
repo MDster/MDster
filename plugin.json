@@ -1,7 +1,7 @@
 {
     "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
     "name": "mdster",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Practise MDster medical exam questions (MCQ, SAQ and SOE cases) with marking, explanations and progress from your MDster account.",
     "author": {
         "name": "Anesthesia Zone, LLC",
@@ -28,7 +28,7 @@
                 "shortDescription": "Medical exam practice",
                 "longDescription": "MDster is a medical exam preparation platform for doctors and medical trainees. This plugin connects your AI assistant to your own MDster account, so you can practise MDster's exam questions in the chat and talk them through with your assistant.\n\nPick an exam and practise multiple-choice questions (MCQ), short-answer questions (SAQ) or structured oral exam (SOE) cases, by category and at your own pace. Questions are shown exactly as MDster wrote them, and the answer stays hidden until you submit your own. MDster then marks your answer and returns the correct options or model answer with MDster's explanation and references, so your assistant can explain the reasoning, compare the alternatives and pull out the key take-aways.\n\nAt the end of a session you get your score, grade and a breakdown by category and question type, saved to your MDster progress like any session on mdster.com. Without full access to an exam you can still answer each speciality's questions of the day.\n\nAnswers are laid out as clear question cards, feedback cards and a results summary that read well on a phone.\n\nMDster is for education and exam preparation only. It is not medical advice, and it never asks for patient information. You sign in to your MDster account with OAuth; the assistant never sees your password or payment details.",
                 "developerName": "Anesthesia Zone, LLC",
-                "category": "Education",
+                "category": "Education & Research",
                 "capabilities": [
                     "Runs MCQ, SAQ and SOE practice sessions from your MDster exams",
                     "Marks your answers with MDster's explanations and references",
@@ -49,6 +49,7 @@
                 "logo": "./assets/icon.png"
             },
             "review": {
+                "demo_recording_url": "https://youtu.be/9s1qIwN6_oE",
                 "commerce": false,
                 "test_cases": {
                     "positive": [
@@ -100,7 +101,7 @@
                 }
             },
             "publication": {
-                "release_notes": "1.1.1: The Claude plugin now includes its MCP server connection (.mcp.json), which was missing from 1.1.0. Earlier in 1.1.0: first directory release. Practise MDster MCQ, SAQ and SOE questions from your MDster exams with marking, explanations and results, plus each speciality's questions of the day. Every tool states its read-only, destructive and open-world behaviour, and the plugin includes skills that lay out questions, feedback and results as clear cards."
+                "release_notes": "1.1.2: First release. Practise MDster MCQ, SAQ and SOE questions from your MDster exams in the chat, marked by MDster with explanations and references, and see your results by category and question type. Each speciality also has a few questions of the day for every signed-in learner. Questions, feedback and results are laid out as clear cards that read well on a phone."
             }
         }
     }

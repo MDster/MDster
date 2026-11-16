@@ -1,6 +1,6 @@
 {
     "name": "mdster",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Practise MDster medical exam questions (MCQ, SAQ and SOE cases) with Claude, with marking, explanations and progress from your MDster account.",
     "author": {
         "name": "MDster",
